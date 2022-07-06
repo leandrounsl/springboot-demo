@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  application.name: springboot-demo
+  datasource:
+   url: jdbc:h2:mem:testdb
+   driverClassName: org.h2.Driver
+   username: test
+   password: test
+  jpa.database-platform: org.hibernate.dialect.H2Dialect
+  h2.console.enabled: true
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+
+info.app.name: Spring Sample Application
+info.app.description: This is my first spring boot application
+info.app.version: 1.0.0
+management.endpoints.web.exposure.include: '*'
+management.endpoint.shutdown.enabled: true
+management.info.env.enabled: true
+management.trace.http.enabled: true
