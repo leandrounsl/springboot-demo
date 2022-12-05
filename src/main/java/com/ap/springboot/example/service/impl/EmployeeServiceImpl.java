@@ -64,7 +64,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void delete(UUID employeeId) {
-		this.employeeRepository.deleteById(employeeId);
+		Employee employee = this.employeeRepository.findById(employeeId).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
+		this.employeeRepository.delete(employee);
 	}
 
 }
